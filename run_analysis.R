@@ -96,8 +96,7 @@ library(dplyr)
 avg_of_columns <- final_data %>%
   group_by(final_data$subjectId, final_data$activityId) %>%
   summarise_all(mean)
-final_data$activityType <- setActivityNames$activityType
-final_data
+
 # Save the newly created dataset
 write.table(final_data, file = "finaldata.txt", row.names = FALSE)
 write.table(avg_of_columns, "newtidydata.txt", row.names = FALSE)
